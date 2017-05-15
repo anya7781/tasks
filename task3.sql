@@ -1,3 +1,4 @@
+/*Create table head*/
 create table head (
 id int (10) AUTO_INCREMENT,
 name varchar(20) NOT NULL,
@@ -6,6 +7,7 @@ PRIMARY KEY (id_user),
 ENGINE = INNODB
 );
 
+/*Create table worker*/
 create table worker (
 id int (10) AUTO_INCREMENT,
 name varchar(20) NOT NULL,
@@ -18,6 +20,7 @@ FOREIGN KEY (id_head) REFERENCES head(id)
 ENGINE = INNODB
 );
 
+/*select from both tables*/
 select t1.name, t2.name from worker t1
 inner join head t2 on t1.id_head = t2.id
 where t1.wage > t2.wage;
